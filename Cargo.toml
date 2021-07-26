@@ -1,0 +1,11 @@
+[package]
+name = "scratch"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+name = "scratch"
+crate-type = ["staticlib"]
+
+[dependencies]
+blake3 = { version = "1.0.0", features = ["rayon"] }
