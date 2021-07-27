@@ -4,8 +4,8 @@ set -e -u -o pipefail -v
 
 cd "$(dirname "$BASH_SOURCE")"
 
-cargo build --target x86_64-unknown-linux-musl --release
+cargo build --release
 
 cbindgen --lang c > blake3_bindings.h
 
-musl-gcc -O3 -Wall -pedantic -o test test.c target/x86_64-unknown-linux-musl/release/libscratch.a
+gcc test.c target/release/libexample.a -o test -O3 -Wall -pedantic -lpthread -ldl -lm
