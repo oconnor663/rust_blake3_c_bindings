@@ -8,4 +8,4 @@ cargo build --target x86_64-unknown-linux-musl
 
 cbindgen --lang c > blake3_bindings.h
 
-gcc -g -o test test.c target/x86_64-unknown-linux-musl/debug/libscratch.a
+gcc -g -Wall -pedantic -o test test.c target/x86_64-unknown-linux-musl/debug/libscratch.a
